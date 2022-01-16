@@ -1,5 +1,12 @@
+* {
+    box-sizing: border-box;
+}
+
+
 body {
     font-family: 'Luxurious Roman', cursive;
+    background-color:#7900ff;
+    
 }
 
 alerts {
