@@ -6,9 +6,22 @@
 body {
     font-family: 'Luxurious Roman', cursive;
     background-color:#7900ff;
-    
+    color: #548cff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 alerts {
     font-family: 'Luxurious Script', cursive;
+}
+
+#quiz-area {
+
+    border-radius: 10px;
+    width: 75%;
+    height: 100vh;
+    background-color: #cfffdc;
+
+
 }
