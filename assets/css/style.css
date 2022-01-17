@@ -1,4 +1,4 @@
-* {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
@@ -7,6 +7,7 @@ body {
     font-family: 'Luxurious Roman', cursive;
     color: black;
     background-color: #740001;
+    margin: 0;
     
 }
 
@@ -30,8 +31,31 @@ li {
     margin: 0 auto;
     margin-top: 75px;
     background-color:#d3a625 ;
-    
+    box-shadow: 0 0 10px 2px;
 }
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 30px;
+    width: 60%;
+    margin: 0 auto; 
+}
+
+.btn {
+    color: black;
+    background-color: #c0c0c0;
+    border-radius: 5%;
+    padding: 5px 10px;
+    outline: none;
+    font-size: 20px;
+}
+
+.btn:hover {
+    border-color: black;
+}
+
+
 
 .question h2 {
     font-size: 35px;
@@ -39,6 +63,11 @@ li {
 
 .answer {
     font-size: 25px;
+}
+
+.scores {
+    position: relative;
+    bottom: 0;
 }
 
 .footer {
