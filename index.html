@@ -13,11 +13,19 @@
 <body>
     <h1 class="title">Quizard</h1>
 
-    <h2 class="description">Welcome to the Quizard Harry Potter Quiz, There are 9 questions that get progressively more difficult. Good Luck.</h2>
+    <h2 class="description">Welcome to the Quizard Harry Potter Quiz.</h2>
 
-    <div class="quiz-area">
+        <div class="rules"><h3>How the quiz works.</h3>
 
-        <div class="question-container" class="hide">
+            <p><strong>You will answer 9 questions of varying difficulty, you only get one chance per question.<br>
+                Once you have chosen your answer simply click submit to find out your results, see your progress<br>
+                                        with our score tracker. Good Luck</strong></p>
+
+        </div>
+
+    <div class="quiz-area hide">
+
+        <div class="question-container">
 
             <div class="question">
 
@@ -37,7 +45,8 @@
 
                 <div class="controls">
 
-                    <button id="submit-btn" class="submit-btn btn">Submit</button>
+                    <button id="submit-btn" class="submit-btn btn ">Submit</button>
+                    
 
                 </div>
             </div>
@@ -49,6 +58,8 @@
             <div class="incorrect"><p>You have Answered .. Incorrect</p></div>
        </div>
     </div>
+
+    <button class="start-btn">Start Quiz</button>
 
     <div class="footer"><footer></footer></div>
     <script src="assets/js/script.js"></script>

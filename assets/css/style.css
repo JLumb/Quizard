@@ -8,19 +8,18 @@ body {
     color: black;
     background-color: #740001;
     margin: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
     
 }
 
 alerts {
     font-family: 'Luxurious Script', cursive;
 }
-h1 {
-    text-align: center;
-}
 
-h2 {
-    text-align: center;
-}
+
+
 li {
     list-style-type: none;
 }
@@ -51,10 +50,39 @@ li {
     font-size: 20px;
 }
 
+.submit-btn {
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding:10px 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .btn:hover {
     border-color: black;
 }
 
+.hide {
+    display: none;
+}
+
+.start-btn {
+    
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: #d3a625;
+    
+}
+
+.start-btn:hover {
+    border-color: black;
+}
 
 
 .question h2 {
