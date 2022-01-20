@@ -51,10 +51,13 @@ li {
 }
 
 .submit-btn {
-
+    position: relative;
     font-size: 1.5rem;
     font-weight: bold;
     padding:10px 20px;
+    margin-top: 15%;
+    
+    
 }
 
 .controls {
@@ -85,7 +88,7 @@ li {
 }
 
 
-.question h2 {
+#question h2 {
     font-size: 35px;
 }
 
