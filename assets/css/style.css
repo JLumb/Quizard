@@ -41,7 +41,7 @@ li {
     margin: 0 auto; 
 }
 
-.btn {
+.buttons {
     color: black;
     background-color: #c0c0c0;
     border-radius: 5%;
@@ -74,19 +74,6 @@ li {
     display: none;
 }
 
-.start-btn {
-    
-    font-size: 2rem;
-    font-weight: bold;
-    border-radius: 8px;
-    background-color: #d3a625;
-    
-}
-
-.start-btn:hover {
-    border-color: black;
-}
-
 
 #question h2 {
     font-size: 35px;
@@ -96,10 +83,6 @@ li {
     font-size: 25px;
 }
 
-.scores {
-    position: relative;
-    bottom: 0;
-}
 
 .footer {
    position:absolute;

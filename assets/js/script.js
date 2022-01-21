@@ -1,6 +1,8 @@
 const question = document.getElementById ('question');
-const answers = array.from(document.getElementsByClassName ('btn'));
-const scoreNum = document.getElementByClassName ('score');
+const answers = document.getElementsByClassName ('answer-text');
+const scoreNum = document.getElementsByClassName ('score');
+const scoreText = document.getElementsByClassName('score-text')
+const btns = document.getElementsByClassName('buttons')
 
 let currentQuestion = {};
 let acceptingAnswers = true;
@@ -8,22 +10,9 @@ let score = 0;
 let questionCounter = 0;
 let selectQuestions = [];
 
+const pointsPerQuestion = 100;
+const maxQuestions = 9;
 
-
-function startGame () {
-    console.log('game started');   
-} 
-
-function findQuestion () {
-    showQuestion();
-}
-
-function showQuestion(){
-    
-
-function selectAnswer () {}
-
-function checkAnswer () {}
 
 let questions = [
     {
@@ -316,4 +305,11 @@ let questions = [
           },
     
         
-]}
+]
+
+function startGame () {
+    questionCounter = 0;
+    score =0;
+    selectQuestions = [...questions]
+    nextQuestion();
+} 
