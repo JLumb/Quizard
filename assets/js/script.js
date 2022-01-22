@@ -1,15 +1,12 @@
-const question = document.getElementById ('question');
-const answers = document.getElementsByClassName ('answer-text');
-const scoreNum = document.getElementsByClassName ('score');
-const scoreText = document.getElementsByClassName('score-text')
-const btns = document.getElementsByClassName('buttons')
-
-let currentQuestion = {};
-let acceptingAnswers = true;
-let score = 0;
-let questionCounter = 0;
-let selectQuestions = [];
-
+const quiz = document.getElementById ('container')
+const score = document.getElementById('score')
+const question = document.getElementById('question')
+const choices = document.getElementById('choices')
+const answer1 = document.getElementById('1')
+const answer2 = document.getElementById('2')
+const answer3 = document.getElementById('3')
+const answer4 = document.getElementById('4')
+const counter = document.getElementById('question-counter')
 const pointsPerQuestion = 100;
 const maxQuestions = 9;
 
@@ -21,7 +18,7 @@ let questions = [
         answer2: '9 3/4', 
         answer3: '7 1/2', 
         answer4: '8 3/4',
-        answer:2, 
+            correct:2, 
     },
     {
     question: "What is the name of Harry's pet owl?",
@@ -29,7 +26,7 @@ let questions = [
         answer2: 'Rudolph', 
         answer3: 'Hedwig', 
         answer4: 'Bedwig',
-        answer:3, 
+            correct:3, 
        },
        {
     question: "What is the model of Harry's broom?",
@@ -37,7 +34,7 @@ let questions = [
         answer2: 'nimbus 3000', 
         answer3: 'nimbus 5000', 
         answer4: 'nimbus 4000',
-        answer:1, 
+            correct:1, 
        },
        {
     question: 'What animal defended Dumbledore?',
@@ -45,7 +42,7 @@ let questions = [
         answer2: 'Dragon', 
         answer3: 'thestral', 
         answer4: 'Phoenix',
-        answer:4, 
+            correct:4, 
        },
        {
     question: 'How did harry survive underwater in the Triwizard tournament?',
@@ -53,7 +50,7 @@ let questions = [
         answer2: 'Bubble-head Charm', 
         answer3: 'Gillyweed', 
         answer4: 'Gills Charm',
-        answer:3,
+            correct:3,
        },
        {
     question: 'What spell does Ron use to save hermione from the troll in The Sorcerers Stone?',
@@ -61,7 +58,7 @@ let questions = [
         answer2: 'Stupify', 
         answer3: 'Petrificus Totalus', 
         answer4: 'Confundus',
-        answer:1, 
+            correct:1, 
        },
        {
     question: 'How many staircases are in Hogwarts?',
@@ -69,7 +66,7 @@ let questions = [
         answer2: '976', 
         answer3: '256', 
         answer4: '839',
-        answer:1,
+            correct:1,
        },
        {
     question: 'How many Horcruxes were made?',
@@ -77,15 +74,15 @@ let questions = [
         answer2: '9', 
         answer3: '6', 
         answer4: '8',
-        answer:4,
+            correct:4,
        },
        {
     question: 'What is Luna Lovegoods Patronus?',
-           answer1: 'Otter', 
-           answer2: 'Hare', 
-           answer3: 'Lynx', 
-           answer4: 'Owl',
-           answer:2,
+        answer1: 'Otter', 
+        answer2: 'Hare', 
+        answer3: 'Lynx', 
+        answer4: 'Owl',
+           correct:2,
        },
        {
     question: 'What species of Dragon was Hagrids pet?',
@@ -101,7 +98,7 @@ let questions = [
         answer2: '19', 
         answer3: '16', 
         answer4: '15',
-        answer:3,
+            correct:3,
        },
        {
     question: 'On a Quidditch pitch, how many goal posts are there?',
@@ -109,7 +106,7 @@ let questions = [
         answer2: '6', 
         answer3: '8', 
         answer4: '4',
-        answer:2, 
+            correct:2, 
        },
        {
     question: 'Who was the Quidditch commentator in Harrys first year at Hogwarts?',
@@ -117,7 +114,7 @@ let questions = [
         answer2: 'Dean Thomas', 
         answer3: 'Terry Boot', 
         answer4: 'Lee Jordan',
-        answer:4, 
+            correct:4, 
           },
           {
     question: 'Who disguised himself as Mad Eye Moody in the Goblet of Fire?',
@@ -125,7 +122,7 @@ let questions = [
         answer2: 'Severus Snape', 
         answer3: 'Barty Crouch Jr', 
         answer4: 'Vincent Crabbe',
-        answer:3,
+            correct:3,
           },
           {
     question: 'Who was the first to be stunned by the basilisk?',
@@ -133,7 +130,7 @@ let questions = [
         answer2: 'Ginny Weasley', 
         answer3: 'Colin Creevey', 
         answer4: 'Hermione Granger',
-        answer:1, 
+            correct:1, 
           },
           {
     question: 'What did Dumbledore leave Hermione in his will?',
@@ -141,7 +138,7 @@ let questions = [
         answer2: 'The Tales of Beedle the Bard', 
         answer3: 'A Lighter', 
         answer4: 'A bezoar',
-        answer:2, 
+            correct:2, 
           },
           {
     question: "What magazine does Luna's father publish?",
@@ -149,7 +146,7 @@ let questions = [
         answer2: 'The Practical Potioneer', 
         answer3: 'The Quibbler', 
         answer4: 'Challenges in Charming',
-        answer:3, 
+            correct:3, 
           },
           {
     question: 'How did Harry spend his first detention',
@@ -157,7 +154,7 @@ let questions = [
         answer2: 'Cleaning trophies', 
         answer3: 'Going into the Forbidden Forest', 
         answer4: 'Writing an essay',
-        answer:3,
+            correct:3,
           },
 {
     question: 'What position did Harry play for the Quidditch team?',
@@ -165,7 +162,7 @@ let questions = [
         answer2: 'Bludger', 
         answer3: 'Keeper', 
         answer4: 'Chaser',
-        answer:1, 
+            correct:1, 
     },
     {
     question: 'Who is Fluffy?',
@@ -173,7 +170,7 @@ let questions = [
         answer2: 'Rons Rat', 
         answer3: 'Hermiones Cat', 
         answer4: 'Hagrids Dragon',
-        answer:1,
+            correct:1,
        },
        {
     question: 'What does the Imperius Curse do?',
@@ -181,7 +178,7 @@ let questions = [
         answer2: 'Turns the person into an Animal', 
         answer3: 'Tortures', 
         answer4: 'Controls',
-        answer:4, 
+            correct:4, 
        },
        {
     question: 'Who kills Professor Dumbledore?',
@@ -189,7 +186,7 @@ let questions = [
         answer2: 'Sirius Black', 
         answer3: 'Severus Snape', 
         answer4: 'Lucius Malfoy',
-        answer:3, 
+            correct:3, 
        },
        {
     question: 'Who was the seeker for the Bulgarian Quidditch team that played in the world cup?',
@@ -197,7 +194,7 @@ let questions = [
         answer2: 'Cedric Diggory', 
         answer3: 'Igor Karkaroff', 
         answer4: 'Ivan Vulchanov',
-        answer:1, 
+            correct:1, 
        },
        {
     question: 'What type of Dragon did harry face in the triwzard tournament?',
@@ -205,7 +202,7 @@ let questions = [
         answer2: 'Chinese Fireball', 
         answer3: 'Norwegian Ridgeback', 
         answer4: 'Welsh Green',
-        answer:1,
+            correct:1,
        },
        {
     question: 'Who is Harrys fifth year Defence Against the Dark Arts teacher?',
@@ -213,7 +210,7 @@ let questions = [
         answer2: 'Severus Snape', 
         answer3: 'Mad Eye Moody', 
         answer4: 'Dolores Umbridge',
-        answer:4,
+            correct:4,
        },
        {
     question: 'What caused Dumbledores hand to be blackened and shriveled?',
@@ -221,7 +218,7 @@ let questions = [
         answer2: 'A ring', 
         answer3: 'A Death Eater', 
         answer4: 'Lucius Malfoy',
-        answer:2,
+            correct:2,
        },
        {
     question: 'When Dumbledore and Harry first Visit Horace Slughorn, what is he disguised as?',
@@ -229,7 +226,7 @@ let questions = [
         answer2: 'A Lampshade', 
         answer3: 'an Armchair', 
         answer4: 'A Statue',
-        answer:3,
+            correct:3,
        },
        {
     question: 'Who is grawp?',
@@ -237,7 +234,7 @@ let questions = [
         answer2: 'Hagrids brother', 
         answer3: 'Sirius House elf', 
         answer4: 'A Centaur',
-        answer:2, 
+            correct:2, 
        },
        {
     question: 'How does Ron save harry from the Dursleys house?',
@@ -245,7 +242,7 @@ let questions = [
         answer2: 'Flying Car', 
         answer3: 'Enchanted Broom', 
         answer4: 'Invisible Bus',
-        answer:2, 
+            correct:2, 
           },
           {
     question: 'What magical talent does Harry share with Voldemort',
@@ -253,7 +250,7 @@ let questions = [
         answer2: 'Anigmus', 
         answer3: 'Both an Auror', 
         answer4: 'Using the Cruciatus Curse',
-        answer:1, 
+            correct:1, 
           },
           {
     question: 'According to the Sorting Hat what qualities do Ravenclaw students possess?',
@@ -261,7 +258,7 @@ let questions = [
         answer2: 'Patience and Loyalty', 
         answer3: 'Cunning', 
         answer4: 'Wit and Learning',
-        answer:4,
+            correct:4,
           },
           {
     question: 'How did Moaning Myrtle die?',
@@ -269,7 +266,7 @@ let questions = [
         answer2: 'Troll', 
         answer3: 'The Killing Curse', 
         answer4: 'The Basilisk',
-        answer:4,
+            correct:4,
           },
           {
     question: 'How does Fawkes the phoenix save harry',
@@ -277,7 +274,7 @@ let questions = [
         answer2: 'Flies away to get help', 
         answer3: 'His spit', 
         answer4: 'Squawks till help arrives',
-        answer:1,
+            correct:1,
           },
           {
     question: 'Who is Nagini?',
@@ -285,7 +282,7 @@ let questions = [
         answer2: 'Hagrids Thestral', 
         answer3: 'Voldemorts Snake', 
         answer4: 'a Death Eater',
-        answer:3, 
+            correct:3, 
           },
           {
     question: 'What does the Marauders Map show?',
@@ -293,7 +290,7 @@ let questions = [
         answer2: 'Hidden treasure', 
         answer3: 'Location of everyone in Hogwarts', 
         answer4: 'The room of requirement',
-        answer:3,
+            correct:3,
           },
           {
     question: 'Why was the Whomping Willow planted?',
@@ -301,15 +298,34 @@ let questions = [
         answer2: 'Protect Hogwarts from intruders', 
         answer3: 'Protect Remus Lupin', 
         answer4: 'Hide the entrance to Diagon Alley',
-        answer:3, 
+            correct:3, 
           },
     
         
 ]
 
-function startGame () {
-    questionCounter = 0;
-    score =0;
-    selectQuestions = [...questions]
-    nextQuestion();
-} 
+
+const prevQuestions = questions.length - 1;
+let currentQuestion = 0;
+
+
+
+function findQuestion (){
+    let q = questions[currentQuestion];
+
+    question.innerHTML = "<p>" + q.question + "</p>";
+    answer1.innerHTML = "<p>"+q.answer1+"</p>";
+    answer2.innerHTML = "<p>"+q.answer2+"</p>";
+    answer3.innerHTML = "<p>"+q.answer3+"</p>";
+    answer4.innerHTML = "<p>"+q.answer4+"</p>";
+    
+}
+
+
+
+function questionCounter () {
+    for (let currentQuestion = 0; currentQuestion < maxQuestions; currentQuestion++){
+        counter.innerHTML += `${currentQuestion} + "of" + ${maxQuestions}`
+    }}
+
+    findQuestion()
