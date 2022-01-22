@@ -325,7 +325,7 @@ function findQuestion (){
 
 function questionCounter () {
     for (let currentQuestion = 0; currentQuestion < maxQuestions; currentQuestion++){
-        counter.innerHTML += `${currentQuestion} + "of" + ${maxQuestions}`
+        counter.innerHTML = `<p>${currentQuestion} + of + ${maxQuestions}</p>`
     }}
 
     findQuestion()
