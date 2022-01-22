@@ -25,7 +25,7 @@ li {
 }
 .quiz-area {
     width: 75%;
-    height: 600px;
+    height: 60%;
     text-align: center;
     margin: 0 auto;
     margin-top: 75px;
@@ -38,7 +38,7 @@ li {
     grid-template-columns: repeat(2, auto);
     gap: 30px;
     width: 60%;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 .buttons {
@@ -51,11 +51,13 @@ li {
 }
 
 .submit-btn {
-    position: relative;
+    
     font-size: 1.5rem;
     font-weight: bold;
     padding:10px 20px;
-    margin-top: 15%;
+    margin-right: 50%;
+    
+    
     
     
 }
@@ -66,7 +68,7 @@ li {
     align-items: center;
 }
 
-.btn:hover {
+.buttons:hover {
     border-color: black;
 }
 
@@ -92,3 +94,25 @@ li {
    text-align: center;
    
 }
+
+@media only screen and (max-width:520px) {
+    .btn-grid {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        gap: 30px;
+        width: 60%;
+        margin: 0 auto;
+    }}
+
+    .submit-btn {
+    
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding:10px 20px;
+        margin: 0 auto;
+
+        
+        
+        
+        
+    }
