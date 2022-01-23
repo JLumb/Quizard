@@ -7,10 +7,14 @@ const answer2 = document.getElementById('2')
 const answer3 = document.getElementById('3')
 const answer4 = document.getElementById('4')
 const counter = document.getElementById('question-counter')
+const timer = document.getElementById('timer')
+const timeGauge = document.getElementById('timegauge')
 const pointsPerQuestion = 100;
 const maxQuestions = 9;
 
-
+//**
+ * 'the variable questions stores all the questions that our quiz will pick from at random'
+ */
 let questions = [
     {
      question: 'What is the platform number for the train to hogwarts?',
@@ -327,5 +331,17 @@ function questionCounter () {
     for (let currentQuestion = 0; currentQuestion < maxQuestions; currentQuestion++){
         counter.innerHTML = `<p>${currentQuestion} + of + ${maxQuestions}</p>`
     }}
+
+function checkAnswer (answer){
+    if (answer=== questions[currentQuestion].correct ) {
+        score++
+    } else {
+
+    }
+}
+
+
+
+
 
     findQuestion()
