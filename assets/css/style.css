@@ -26,6 +26,7 @@ li {
     list-style-type: none;
 }
 #container {
+    position: relative;
     width: 75%;
     height: 500px;
     text-align: center;

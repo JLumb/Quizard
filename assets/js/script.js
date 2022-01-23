@@ -1,5 +1,6 @@
 const start = document.getElementById('start')
-const quiz = document.getElementById ('container')
+const container = document.getElementById ('container')
+const quiz = document.getElementsByClassName('quiz-container')
 const score = document.getElementById('score')
 const question = document.getElementById('question')
 const choices = document.getElementById('choices')
@@ -317,11 +318,14 @@ const questionTime = 15;
 const timerWidth = 150;
 const timerUnit = timerWidth / questionTime; //15 seconds
 
-start.addEventListener
+start.addEventListener('click', startQuiz);
 function startQuiz () {
+    start.style.display= "none";
     findQuestion()
+    container.style.display = "block";
     renderCounter()
-    TIMER = setInterval(renderCounter, 1000);
+    countDown = setInterval(renderCounter, 1000);
+    
 }
 /* find and show the current question*/
 function findQuestion (){
