@@ -1,3 +1,4 @@
+const start = document.getElementById('start')
 const quiz = document.getElementById ('container')
 const score = document.getElementById('score')
 const question = document.getElementById('question')
@@ -12,9 +13,9 @@ const timeGauge = document.getElementById('timegauge')
 const pointsPerQuestion = 100;
 const maxQuestions = 9;
 
-//**
- * 'the variable questions stores all the questions that our quiz will pick from at random'
- */
+
+
+/* the questions variable will store all the questions that the quiz will pick from at random for the user*/
 let questions = [
     {
      question: 'What is the platform number for the train to hogwarts?',
@@ -311,9 +312,18 @@ let questions = [
 
 const prevQuestions = questions.length - 1;
 let currentQuestion = 0;
+let count = 0;
+const questionTime = 15;
+const timerWidth = 150;
+const timerUnit = timerWidth / questionTime; //15 seconds
 
-
-
+start.addEventListener
+function startQuiz () {
+    findQuestion()
+    renderCounter()
+    TIMER = setInterval(renderCounter, 1000);
+}
+/* find and show the current question*/
 function findQuestion (){
     let q = questions[currentQuestion];
 
@@ -325,13 +335,24 @@ function findQuestion (){
     
 }
 
+function renderCounter (){
+    if (count <= questionTime) {
+        counter.innerHTML = count;
+        timeGauge.style.width = count * timerUnit;
+        count++
+
+    } else {
+        count = 0;
+    }
+}
 
 
+/* display which out of the 9 questions the user is on example; 3 of 9*/
 function questionCounter () {
     for (let currentQuestion = 0; currentQuestion < maxQuestions; currentQuestion++){
         counter.innerHTML = `<p>${currentQuestion} + of + ${maxQuestions}</p>`
     }}
-
+/*Check if the answer is correct before moving onto the next question*/
 function checkAnswer (answer){
     if (answer=== questions[currentQuestion].correct ) {
         score++
@@ -344,4 +365,4 @@ function checkAnswer (answer){
 
 
 
-    findQuestion()
+    
