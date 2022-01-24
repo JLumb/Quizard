@@ -29,7 +29,7 @@ li {
 #container {
     position: relative;
     width: 75%;
-    height: 500px;
+    height: 550px;
     text-align: center;
     margin: 0 auto;
     margin-top: 75px;
@@ -110,7 +110,11 @@ li {
         margin: 0 auto;
     
     }
-     #container {
-         height: 60%;
-     }
+     
+}
+
+@media only screen and (max-width:750px){
+    #container {
+        height: 65%;
+    }
 }
