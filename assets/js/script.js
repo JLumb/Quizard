@@ -1,7 +1,5 @@
 const start = document.getElementById('start');
 const container = document.getElementById ('container');
-const quiz = document.getElementsByClassName('quiz-container');
-const scoreCount = document.getElementById('score');
 const question = document.getElementById('question');
 const choices = document.getElementById('choices');
 const answer1 = document.getElementById('1');
@@ -9,9 +7,7 @@ const answer2 = document.getElementById('2');
 const answer3 = document.getElementById('3');
 const answer4 = document.getElementById('4');
 const counter = document.getElementById('question-counter');
-const timer = document.getElementById('timer');
 const timeGauge = document.getElementById('timegauge');
-const pointsPerQuestion = 100;
 const maxQuestions = 9;
 
 
@@ -308,10 +304,7 @@ let questions = [
           },
     
         
-]
-
-
-const prevQuestions = questions.length - 1;
+];
 let randomQuestion = 0;
 let count = 0;
 const questionTime = 15;
@@ -322,9 +315,9 @@ start.addEventListener('click', startQuiz);
 
 function startQuiz () {
     start.style.display= "none";
-    findQuestion()
+    findQuestion();
     container.style.display = "block";
-    renderCounter()
+    renderCounter();
     countDown = setInterval(renderCounter, 1000);
     
 }
@@ -332,7 +325,7 @@ function startQuiz () {
 function findQuestion (){
 
     let randomQuestion = Math.floor(Math.random()*(questions.length));
-    document.getElementsByClassName('quiz').innerHTML=questions[randomQuestion]
+    document.getElementsByClassName('quiz').innerHTML=questions[randomQuestion];
     let q = questions[randomQuestion];
     
     question.innerHTML = "<p>" + q.question + "</p>";
@@ -343,17 +336,12 @@ function findQuestion (){
     
 }
 
-function questionCounter () {
-    let preQuestion = (document.getElementById('questionCounter').innerText);
-    document.getElementById('questionCounter').innerText = `'Question' + ${randomQuestion} + 'of' + ${maxQuestions}`
-}
-
 function renderCounter (){
 
     if (count <= questionTime) {
         counter.innerHTML = count;
         timeGauge.style.width = count * timerUnit;
-        count++
+        count++;
 
     } else {
 
@@ -386,12 +374,13 @@ function checkAnswer (choices){
     
 
 function incrementScore (){
- 
-    let currentScore = parseInt(document.getElementById("score").innerText)
+
+    checkAnswer()
+    let currentScore = parseInt(document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++currentScore;
 
 
-}
+};
 
 
 
