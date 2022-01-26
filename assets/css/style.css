@@ -5,7 +5,7 @@
 
 body {
     font-family: 'Luxurious Roman', cursive;
-    color: black;
+    color: #d3a625;
     background-color: #740001;
     margin: 0;
     text-align: center;
@@ -34,6 +34,7 @@ li {
     margin: 0 auto;
     margin-top: 75px;
     background-color:#d3a625 ;
+    color: black;
     box-shadow: 0 0 10px 2px;
     margin-bottom: 50px;
 }
@@ -81,6 +82,7 @@ li {
 
 #question h2 {
     font-size: 35px;
+    
 }
 
 .choice {
