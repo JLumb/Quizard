@@ -321,6 +321,7 @@ function startQuiz () {
     countDown = setInterval(renderCounter, 1000);
     
 }
+
 /* find and show the current question*/
 function findQuestion (){
 
@@ -351,9 +352,6 @@ function renderCounter (){
         }
      }
 
- 
-  
-
 /*Check if the answer is correct before moving onto the next question and incrementing score*/
 function checkAnswer (choices){
 
@@ -375,12 +373,12 @@ function checkAnswer (choices){
 
 function incrementScore (){
 
-    checkAnswer()
+    checkAnswer();
     let currentScore = parseInt(document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++currentScore;
 
 
-};
+}
 
 
 

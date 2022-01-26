@@ -8,5 +8,11 @@
 
  ![wireframe](assets/images/wireframe1.png)
 
+### I Ran my code through the HTML validator and it came back with 0 errors.
+ ![htmlcheck](assets/images/htmlcheck.png)
+
+### I also ran my code through the CSS validator it came back 0 errors.
+ ![csscheck](assets/images/csscheck.png)
+
 
  
