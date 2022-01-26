@@ -312,7 +312,7 @@ let questions = [
 
 
 const prevQuestions = questions.length - 1;
-let currentQuestion = 0;
+let randomQuestion = 0;
 let count = 0;
 const questionTime = 15;
 const timerWidth = 150;
@@ -345,7 +345,7 @@ function findQuestion (){
 
 function questionCounter () {
     let preQuestion = (document.getElementById('questionCounter').innerText);
-    document.getElementById('questionCounter').innerText = `'Question' + ${currentQuestion} + 'of' + ${maxQuestions}`
+    document.getElementById('questionCounter').innerText = `'Question' + ${randomQuestion} + 'of' + ${maxQuestions}`
 }
 
 function renderCounter (){
@@ -359,22 +359,17 @@ function renderCounter (){
 
         count = 0;
 
-      if (currentQuestion > maxQuestions) {
-
-        currentQuestion++;
-        
-
-            } 
+     
         }
      }
 
  
   
 
-/*Check if the answer is correct before moving onto the next question*/
+/*Check if the answer is correct before moving onto the next question and incrementing score*/
 function checkAnswer (choices){
 
-    if (choices == questions[currentQuestion].correct) {
+    if (choices == questions[randomQuestion].correct) {
         
         incrementScore();
         findQuestion();
@@ -398,12 +393,6 @@ function incrementScore (){
 
 }
 
-function decreaseScore () {
-
-     currentScore = parseInt(document.getElementById("score").innerText)
-     document.getElementById("score").innerText = --currentScore;
-
-}
 
 
 
