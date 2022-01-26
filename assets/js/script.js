@@ -305,6 +305,7 @@ let questions = [
     
         
 ];
+
 let randomQuestion = 0;
 let count = 0;
 const questionTime = 15;
