@@ -330,7 +330,10 @@ function startQuiz () {
 }
 /* find and show the current question*/
 function findQuestion (){
-    let q = questions[currentQuestion];
+
+    let randomQuestion = Math.floor(Math.random()*(questions.length));
+    document.getElementsByClassName('quiz').innerHTML=questions[randomQuestion]
+    let q = questions[randomQuestion];
     
     question.innerHTML = "<p>" + q.question + "</p>";
     answer1.innerHTML = "<p>"+q.answer1+"</p>";
@@ -359,11 +362,14 @@ function renderCounter (){
       if (currentQuestion > maxQuestions) {
 
         currentQuestion++;
-        findQuestion();
+        
 
-       }
-    }
-}
+            } 
+        }
+     }
+
+ 
+  
 
 /*Check if the answer is correct before moving onto the next question*/
 function checkAnswer (choices){
@@ -371,10 +377,15 @@ function checkAnswer (choices){
     if (choices == questions[currentQuestion].correct) {
         
         incrementScore();
+        findQuestion();
+    
+
         
     } else {
         
-            decreaseScore ();   
+            
+            findQuestion(); 
+              
     }
     }
     
@@ -393,5 +404,7 @@ function decreaseScore () {
      document.getElementById("score").innerText = --currentScore;
 
 }
+
+
 
     
