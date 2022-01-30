@@ -355,12 +355,13 @@ function renderCounter() {
     console.log(id, currentIndex.correct)
 
     if (id == currentIndex.correct) {
-        incrementScore()
+        // the answer is; correct
+        incrementScore();
         findQuestion()
-        // the answer is correct
+
     } else {
         // the answer is not correct
-        findQuestion()
+        findQuestion();
     }
 
     // call next question
