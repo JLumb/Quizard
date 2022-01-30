@@ -351,7 +351,7 @@ function renderCounter() {
 }
 
 [...answers].forEach(a => a.addEventListener('click', event => {
-    const id = event.target.id;
+    const id = event.currentTarget.id;
     console.log(id, currentIndex.correct)
 
     if (id == currentIndex.correct) {
