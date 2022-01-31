@@ -2,7 +2,7 @@
 #                                                                          Quizard
 
 ##                                                                    What is Quizard?
- ### Quizard is a brand new quiz platform based around the world famous Book and Movie series Harry Potter, 
+ ### Quizard is a brand new quiz platform based around the world famous Book and Movie series Harry Potter. 
  ### The quiz will throw questions at you chosen at random at varying difficulties. Your score will be tracked so you can see your progess. 
  ### Test yourself and see if you can achieve a high score!
 
