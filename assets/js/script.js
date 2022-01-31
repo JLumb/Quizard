@@ -8,6 +8,7 @@ const answer3 = document.getElementById("3");
 const answer4 = document.getElementById("4");
 const counter = document.getElementById('question-counter');
 const timeGauge = document.getElementById('timegauge');
+const currentQuestion = 0;
 const maxQuestions = 9;
 let currentIndex = 0;
 
@@ -331,15 +332,15 @@ function findQuestion() {
     // set the global currentIndex to track
     currentIndex = questions[randomQuestion];
 
+
     question.innerHTML = "<p>" + q.question + "</p>";
     answer1.innerHTML = "<p>" + q.answer1 + "</p>";
     answer2.innerHTML = "<p>" + q.answer2 + "</p>";
     answer3.innerHTML = "<p>" + q.answer3 + "</p>";
     answer4.innerHTML = "<p>" + q.answer4 + "</p>";
 
-}
 
-document.getElementById('questionCounter').innerHTML = `Question   of  ${maxQuestions}`;
+}
 
 
 function renderCounter() {
@@ -354,7 +355,7 @@ function renderCounter() {
         count = 0;
         findQuestion()
     }
-    }
+}
 
 
 
@@ -363,25 +364,33 @@ function resetCounter() {
 }
 
 
+
 [...answers].forEach(a => a.addEventListener('click', event => {
     const id = event.currentTarget.id;
+    // Log correct answer and user choice 
     console.log(id, currentIndex.correct)
 
     if (id == currentIndex.correct) {
         // the answer is; correct
         incrementScore();
         resetCounter();
-        findQuestion();
+
+
 
 
     } else {
         // the answer is not correct
-        findQuestion();
         resetCounter();
+
+
+
+
     }
 
     // call next question
+    findQuestion();
 }))
+
 
 
 
@@ -391,5 +400,3 @@ function incrementScore() {
     let currentScore = parseInt(document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++currentScore;
 }
-
-
