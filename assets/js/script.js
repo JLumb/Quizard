@@ -391,7 +391,7 @@ function resetCounter() {
     findQuestion();
 }))
 
-
+alert.addEventListener('keypress', findQuestion)
 
 
 function incrementScore() {
