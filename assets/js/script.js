@@ -151,7 +151,7 @@ let questions = [{
         correct: "3",
     },
     {
-        question: 'How did Harry spend his first detention',
+        question: 'How did Harry spend his first detention?',
         answer1: 'Signing autographs',
         answer2: 'Cleaning trophies',
         answer3: 'Going into the Forbidden Forest',
@@ -247,7 +247,7 @@ let questions = [{
         correct: "2",
     },
     {
-        question: 'What magical talent does Harry share with Voldemort',
+        question: 'What magical talent does Harry share with Voldemort?',
         answer1: 'Parsel Tongue',
         answer2: 'Anigmus',
         answer3: 'Both an Auror',
@@ -271,12 +271,12 @@ let questions = [{
         correct: "4",
     },
     {
-        question: 'How does Fawkes the phoenix save harry',
+        question: 'How does Fawkes the phoenix save harry?',
         answer1: 'His Tears',
         answer2: 'Flies away to get help',
         answer3: 'His spit',
         answer4: 'Squawks till help arrives',
-        correct: "4",
+        correct: "1",
     },
     {
         question: 'Who is Nagini?',
@@ -284,7 +284,7 @@ let questions = [{
         answer2: 'Hagrids Thestral',
         answer3: 'Voldemorts Snake',
         answer4: 'a Death Eater',
-        correct: "4",
+        correct: "3",
     },
     {
         question: 'What does the Marauders Map show?',
@@ -292,7 +292,7 @@ let questions = [{
         answer2: 'Hidden treasure',
         answer3: 'Location of everyone in Hogwarts',
         answer4: 'The room of requirement',
-        correct: "4",
+        correct: "",
     },
     {
         question: 'Why was the Whomping Willow planted?',
@@ -339,6 +339,9 @@ function findQuestion() {
 
 }
 
+document.getElementById('questionCounter').innerHTML = `Question   of  ${maxQuestions}`;
+
+
 function renderCounter() {
 
     if (count <= questionTime) {
@@ -346,8 +349,15 @@ function renderCounter() {
         timeGauge.style.width = count * timerUnit;
         count++;
 
+    } else {
+        count = 0;
+    }
     }
 
+
+
+function resetCounter() {
+    count = 0;
 }
 
 
@@ -358,12 +368,14 @@ function renderCounter() {
     if (id == currentIndex.correct) {
         // the answer is; correct
         incrementScore();
-        findQuestion()
+        resetCounter();
+        findQuestion();
 
 
     } else {
         // the answer is not correct
         findQuestion();
+        resetCounter();
     }
 
     // call next question
