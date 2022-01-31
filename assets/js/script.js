@@ -1,7 +1,6 @@
 const start = document.getElementById('start');
 const container = document.getElementById('container');
 const question = document.getElementById('question');
-const userAnswer = document.getElementById('choices');
 const answers = document.getElementsByClassName('choice')
 const answer1 = document.getElementById("1");
 const answer2 = document.getElementById("2");
@@ -348,7 +347,9 @@ function renderCounter() {
         count++;
 
     }
+
 }
+
 
 [...answers].forEach(a => a.addEventListener('click', event => {
     const id = event.currentTarget.id;
@@ -358,6 +359,7 @@ function renderCounter() {
         // the answer is; correct
         incrementScore();
         findQuestion()
+
 
     } else {
         // the answer is not correct
