@@ -350,7 +350,9 @@ function renderCounter() {
         count++;
 
     } else {
+        alert("Time's up! Moving on to the next question.")
         count = 0;
+        findQuestion()
     }
     }
 
@@ -389,3 +391,5 @@ function incrementScore() {
     let currentScore = parseInt(document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++currentScore;
 }
+
+
